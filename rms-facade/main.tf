@@ -48,7 +48,10 @@ module "oci_lz_orchestrator" {
   object_storage_configuration = local.object_storage_configuration
   # Compute
   instances_configuration = local.instances_configuration
-
+  # OKE
+  oke_clusters_configuration = local.oke_clusters_configuration
+  oke_workers_configuration  = local.oke_workers_configuration
+  
   # Dependencies
   compartments_dependency = local.compartments_dependency
   network_dependency      = local.network_dependency
@@ -62,3 +65,4 @@ module "oci_lz_orchestrator" {
   instances_dependency    = local.instances_dependency
   nlbs_dependency         = local.nlbs_dependency
 }
+

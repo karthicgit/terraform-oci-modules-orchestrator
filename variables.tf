@@ -161,7 +161,27 @@ variable "instances_configuration" {
   default = null
 }
 
+variable "oke_clusters_configuration" {
+  type    = any
+  default = null
+}
+
+variable "oke_workers_configuration" {
+  type    = any
+  default = null
+}
+
 variable "object_storage_configuration" {
+  type    = any
+  default = null
+}
+
+variable "clusters_configuration" {
+  type    = any
+  default = null
+}
+
+variable "workers_configuration" {
   type    = any
   default = null
 }
@@ -225,3 +245,4 @@ variable "output_path" {
   type    = string
   default = null
 }
+

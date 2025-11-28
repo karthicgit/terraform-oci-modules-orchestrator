@@ -246,3 +246,53 @@ variable "output_path" {
   default = null
 }
 
+#exadata module variables
+variable "pluggable_databases_configuration" {
+  description = "Additional pluggable databases to create for this example."
+  type        = any
+  default     = null
+}
+
+variable "cloud_exadata_infrastructures_configuration" {
+  type    = any
+  default = null
+}
+
+variable "cloud_vm_clusters_configuration" {
+  type    = any
+  default = null
+}
+
+variable "cloud_db_homes_configuration" {
+  description = "DB homes to be created."
+  type        = any
+  default     = null
+}
+
+variable "databases_configuration" {
+  description = "Databases (CDB + initial PDB) to create for this example. Keys are arbitrary unique names."
+  type        = any
+  default     = null
+}
+
+variable "default_defined_tags" {
+  type    = any
+  default = null
+}
+
+variable "default_freeform_tags" {
+  type    = any
+  default = null
+}
+
+variable "default_compartment_id" {
+  description = "Default Compartment ID for all resources."
+  type        = string
+  default     = null
+}
+
+variable "subscription_dependency" {
+  type = any
+  default = null
+}
+

@@ -30,12 +30,12 @@ module "oci_lz_oke" {
 }
 
 module "oci_lz_exadata" {
-  source                                      = "git::https://github.com/oci-landing-zones/terraform-oci-modules-exadata.git"
+  source                                      = "git::https://github.com/oci-landing-zones/terraform-oci-modules-exadata.git?ref=v1.0.0"
   cloud_exadata_infrastructures_configuration = var.cloud_exadata_infrastructures_configuration
   cloud_vm_clusters_configuration             = var.cloud_vm_clusters_configuration
   cloud_db_homes_configuration                = var.cloud_db_homes_configuration
-  compartments_dependency                     = var.compartments_dependency
-  network_dependency                          = var.network_dependency
+  compartments_dependency                     = local.compartments_dependency
+  network_dependency                          = local.network_dependency
   subscription_dependency                     = var.subscription_dependency
   default_compartment_id                      = var.default_compartment_id
   default_defined_tags                        = var.default_defined_tags

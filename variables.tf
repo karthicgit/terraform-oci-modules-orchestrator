@@ -2,6 +2,11 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 # User Credentials 
+variable "auth_method" {
+  type = string
+  default = "ApiKey"
+}
+
 variable "tenancy_ocid" {
   type    = string
   default = null

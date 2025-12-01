@@ -15,6 +15,7 @@ locals {
 }
 
 provider "oci" {
+  auth                 = var.auth_method
   region               = var.region
   tenancy_ocid         = var.tenancy_ocid
   user_ocid            = var.user_ocid
@@ -26,6 +27,7 @@ provider "oci" {
 
 provider "oci" {
   alias                = "home"
+  auth                 = var.auth_method
   region               = local.regions_map[local.home_region_key]
   tenancy_ocid         = var.tenancy_ocid
   user_ocid            = var.user_ocid
@@ -37,6 +39,7 @@ provider "oci" {
 
 provider "oci" {
   alias                = "secondary_region"
+  auth                 = var.auth_method
   region               = local.regions_map[local.home_region_key]
   tenancy_ocid         = var.tenancy_ocid
   user_ocid            = var.user_ocid

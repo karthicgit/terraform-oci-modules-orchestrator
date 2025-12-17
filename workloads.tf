@@ -30,7 +30,8 @@ module "oci_lz_oke" {
 }
 
 module "oci_lz_exadata" {
-  source                                      = "git::https://github.com/oci-landing-zones/terraform-oci-modules-exadata.git?ref=v1.0.1"
+  count = var.cloud_exadata_infrastructures_configuration != null || var.cloud_vm_clusters_configuration != null || var.cloud_db_homes_configuration != null || var.databases_configuration != null || var.pluggable_databases_configuration != null ? 1 : 0
+  source                                      = "git::https://github.com/oci-landing-zones/terraform-oci-modules-exadata.git//exadata-database?ref=v1.0.1"
   cloud_exadata_infrastructures_configuration = var.cloud_exadata_infrastructures_configuration
   cloud_vm_clusters_configuration             = var.cloud_vm_clusters_configuration
   cloud_db_homes_configuration                = var.cloud_db_homes_configuration
